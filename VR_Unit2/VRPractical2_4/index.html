@@ -4,12 +4,26 @@
     <script src="script.js"></script>
   </head>
   <body>
+     <a-assets>
+    <img src="sky.jpg" id="sky" /> 
+    <img src="brick.jpg" id="brick"/>
+    <img src="roof.jpg" id="roof"/>
+    <img src="grass.jpg" id="grass"/>
+  </a-assets>
+  
       <a-scene>
         <!-- Challenge 1: Add a propriate plane and sky for the missile launch site -->
-    
+       <a-entity id="rocket" position="3 1 -4">
+      <a-cone radius-top="0" radius-bottom="0.5" height="1" color="red" position="0 0 -2"></a-cone>
+      <a-cylinder radius="0.5" height="2" color="gray" position="0 -1.5 -2"></a-cylinder>
+      <a-cone radius-top="0" radius-bottom="0.25" height="2" color="orange" position="0 -3.5 -2" rotation="-180 0 0"></a-cone>
+    </a-entity>
         
       
       <!-- Camera is added so that you do not "spawn" at the origin -->
+         
+      <a-plane position="0 0 0" rotation="-90 0 0" width="100" height="100" src="#grass" repeat="30 30"></a-plane>
+      <a-sky src="sky.jpg" repeat="5 5"></a-sky>
       <a-camera position="0 1.3 4"></a-camera>
     </a-scene>
   </body>
